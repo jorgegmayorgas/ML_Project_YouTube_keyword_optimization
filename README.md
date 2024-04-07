@@ -30,7 +30,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/jorgegmayorgas/repo_name">
+  <a href="https://github.com/jorgegmayorgas/ML_Project_YouTube_keyword_optimization">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -39,14 +39,14 @@
   <p align="center">
     This is a Jupyter Notebook for creating a ML model using dataset from <a href="https://www.kaggle.com/datasets/asaniczka/2024-youtube-channels-1-million">Kaggle</a>
     <br />
-    <a href="https://github.com/jorgegmayorgas/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/jorgegmayorgas/ML_Project_YouTube_keyword_optimization"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jorgegmayorgas/repo_name">View Demo</a>
+    <a href="https://github.com/jorgegmayorgas/ML_Project_YouTube_keyword_optimization">View Demo</a>
     ·
-    <a href="https://github.com/jorgegmayorgas/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/jorgegmayorgas/ML_Project_YouTube_keyword_optimization/issues">Report Bug</a>
     ·
-    <a href="https://github.com/jorgegmayorgas/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/jorgegmayorgas/ML_Project_YouTube_keyword_optimization/issues">Request Feature</a>
   </p>
 </div>
 
@@ -83,7 +83,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/jorgegmayorgas/ML_Project_YouTube_keyword_optimization)
 
 <!--Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `jorgegmayorgas`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description` -->
 
@@ -121,7 +121,7 @@ To get a local copy up and running follow these simple example steps. -->
    py https://bootstrap.pypa.io/get-pip.py
    ```
 
-### Installation
+### Installation 
 
 1. Clone the repo
    ```sh
@@ -131,6 +131,12 @@ To get a local copy up and running follow these simple example steps. -->
    ```sh
    pip install -r installed_packages.txt
    ```
+3. Choose one of the following solutions
+4. Install Jupyter Notebook
+   ```sh
+   pip install notebook
+   ```
+5. Install Visual Studio Code, click on this [link](https://code.visualstudio.com/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -140,22 +146,24 @@ To get a local copy up and running follow these simple example steps. -->
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+Open with Jupyter Notebook or Visual Studio Code
+```sh
+   results_final_ml_project_youtube_keywords_optimization.ipynb
+```
+<!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
+<!--
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
+<!--- [ ] Feature 1
 - [ ] Feature 2
 - [ ] Feature 3
     - [ ] Nested Feature
-
+-->
 See the [open issues](https://github.com/jorgegmayorgas/repo_name/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -183,7 +191,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the GNU AFFERO GENERAL PUBLIC LICENSE License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -192,9 +200,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Jorge Giménez - [LinkedIn](https://www.linkedin.com/in/jgimenezm/?locale=en_US) - jorgegmayorgas@gmail.com
 
-Project Link: [https://github.com/jorgegmayorgas/repo_name](https://github.com/jorgegmayorgas/repo_name)
+Project Link: [https://github.com/jorgegmayorgas/](https://github.com/jorgegmayorgas/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -203,9 +211,12 @@ Project Link: [https://github.com/jorgegmayorgas/repo_name](https://github.com/j
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* Family and friends
+* [The Bridge|Talent Accelerator](https://www.linkedin.com/school/the-bridge-digital-talent-accelerator/?originalSubdomain=es) for their [Data Science Bootcamp](https://www.thebridge.tech/bootcamps/data-science?kw=the%20bridge%20data%20science&cpn=21006651326&utm_medium=ppc&utm_source=adwords&utm_campaign=ADSM_ALL_MARCA_GOOGLE_CONV_SEARCH&utm_term=the%20bridge%20data%20science&hsa_kw=the%20bridge%20data%20science&hsa_net=adwords&hsa_ver=3&hsa_cam=21006651326&hsa_ad=692242187661&hsa_acc=1272778203&hsa_src=g&hsa_grp=158138127583&hsa_mt=e&hsa_tgt=kwd-816707328670&gad_source=1&gclid=Cj0KCQjwiMmwBhDmARIsABeQ7xS_bqJk05H-kE2szZqnRfBh7Bk2ZQ0eagIWUe2HDrLw_sqyc9nnIegaAl6GEALw_wcB)
+* [Google](https://www.google.com) for developing the awesome online video sharing and social media platform that is [YouTube](https://www.youtube.com)
+* [Asaniczka](https://www.kaggle.com/asaniczka)  the creator of the Dataset used in this project
+* [Kaggle](https://www.kaggle.com/asaniczka) for providing such  quantity of datasets
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -214,15 +225,15 @@ Project Link: [https://github.com/jorgegmayorgas/repo_name](https://github.com/j
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/jorgegmayorgas/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/jorgegmayorgas/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/jorgegmayorgas/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/jorgegmayorgas/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/jorgegmayorgas/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/jorgegmayorgas/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/jorgegmayorgas/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/jorgegmayorgas/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/jorgegmayorgas/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/jorgegmayorgas/repo_name/blob/master/LICENSE.txt
+[contributors-url]: https://github.com/jorgegmayorgas/ML_Project_YouTube_keyword_optimization/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/jorgegmayorgas/ML_Project_YouTube_keyword_optimization.svg?style=for-the-badge
+[forks-url]: https://github.com/jorgegmayorgas/ML_Project_YouTube_keyword_optimization/network/members
+[stars-shield]: https://img.shields.io/github/stars/jorgegmayorgas/ML_Project_YouTube_keyword_optimization.svg?style=for-the-badge
+[stars-url]: https://github.com/jorgegmayorgas/ML_Project_YouTube_keyword_optimization/stargazers
+[issues-shield]: https://img.shields.io/github/issues/jorgegmayorgas/ML_Project_YouTube_keyword_optimization.svg?style=for-the-badge
+[issues-url]: https://github.com/jorgegmayorgas/ML_Project_YouTube_keyword_optimization/issues
+[license-shield]: https://img.shields.io/github/license/jorgegmayorgas/ML_Project_YouTube_keyword_optimization.svg?style=for-the-badge
+[license-url]: https://github.com/jorgegmayorgas/ML_Project_YouTube_keyword_optimization/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jgimenezm/?locale=en_US
 [product-screenshot]: images/intro_ppt.jpg
