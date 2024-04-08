@@ -116,20 +116,9 @@ To get a local copy up and running follow these simple example steps. -->
 ### Prerequisites
 
 1. First install [Python 3.10.11](https://www.python.org/downloads/release/python-31011/) or above
-2. Also install [pip](https://pip.pypa.io/en/stable/installation/)
+2. Install [pip](https://pip.pypa.io/en/stable/installation/)
    ```sh
    py https://bootstrap.pypa.io/get-pip.py
-   ```
-
-### Installation 
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/jorgegmayorgas/repo_name.git
-   ```
-2. Install Python Libraries packages
-   ```sh
-   pip install -r installed_packages.txt
    ```
 3. Choose one of the following solutions
 4. Install Jupyter Notebook
@@ -137,6 +126,18 @@ To get a local copy up and running follow these simple example steps. -->
    pip install notebook
    ```
 5. Install Visual Studio Code, click on this [link](https://code.visualstudio.com/)
+   
+### Installation 
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/jorgegmayorgas/ML_Project_YouTube_keyword_optimization.git
+   ```
+2. Install Python libraries 
+   ```sh
+   pip install -r installed_packages.txt
+   ```
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -164,7 +165,7 @@ Open with Jupyter Notebook or Visual Studio Code
 - [ ] Feature 3
     - [ ] Nested Feature
 -->
-See the [open issues](https://github.com/jorgegmayorgas/repo_name/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/jorgegmayorgas/ML_Project_YouTube_keyword_optimization/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -211,11 +212,11 @@ Project Link: [https://github.com/jorgegmayorgas/](https://github.com/jorgegmayo
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* Family and friends
+* Ale, Noa Valentina, Tita, Janis,Mom, the rest of the family and friends.
 * [The Bridge|Talent Accelerator](https://www.linkedin.com/school/the-bridge-digital-talent-accelerator/?originalSubdomain=es) for their [Data Science Bootcamp](https://www.thebridge.tech/bootcamps/data-science?kw=the%20bridge%20data%20science&cpn=21006651326&utm_medium=ppc&utm_source=adwords&utm_campaign=ADSM_ALL_MARCA_GOOGLE_CONV_SEARCH&utm_term=the%20bridge%20data%20science&hsa_kw=the%20bridge%20data%20science&hsa_net=adwords&hsa_ver=3&hsa_cam=21006651326&hsa_ad=692242187661&hsa_acc=1272778203&hsa_src=g&hsa_grp=158138127583&hsa_mt=e&hsa_tgt=kwd-816707328670&gad_source=1&gclid=Cj0KCQjwiMmwBhDmARIsABeQ7xS_bqJk05H-kE2szZqnRfBh7Bk2ZQ0eagIWUe2HDrLw_sqyc9nnIegaAl6GEALw_wcB)
 * [Google](https://www.google.com) for developing the awesome online video sharing and social media platform that is [YouTube](https://www.youtube.com)
 * [Asaniczka](https://www.kaggle.com/asaniczka)  the creator of the Dataset used in this project
-* [Kaggle](https://www.kaggle.com/asaniczka) for providing such  quantity of datasets
+* [Kaggle](https://www.kaggle.com/) for providing such  quantity of datasets
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -236,7 +237,8 @@ Project Link: [https://github.com/jorgegmayorgas/](https://github.com/jorgegmayo
 [license-url]: https://github.com/jorgegmayorgas/ML_Project_YouTube_keyword_optimization/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jgimenezm/?locale=en_US
-[product-screenshot]: images/intro_ppt.jpg
+<!-- [product-screenshot]: images/intro_ppt.jpg -->
+[product-screenshot]: images/keywords.jpg
 [Python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
 [Python-url]: https://www.python.org/
 [Visual_Code]: https://img.shields.io/badge/Vscode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white
