@@ -97,6 +97,7 @@
 * [![Jupyter][Jupyter]][Jupyter-url]
 * [![Visual_Code][Visual_Code]][Visual_Code-url]
 * [![PowerPoint][PowerPoint]][PowerPoint-url]
+* [![DALL-E Enabled][DALL-E Enabled]][DALL-E Enabled-url]
 <!-- * [![Angular][Angular.io]][Angular-url] -->
 <!-- * [![Svelte][Svelte.dev]][Svelte-url] -->
 <!-- * [![Laravel][Laravel.com]][Laravel-url] -->
@@ -120,12 +121,15 @@ To get a local copy up and running follow these simple example steps. -->
    ```sh
    py https://bootstrap.pypa.io/get-pip.py
    ```
-3. Choose one of the following solutions
-4. Install Jupyter Notebook
-   ```sh
-   pip install notebook
-   ```
-5. Install Visual Studio Code, click on this [link](https://code.visualstudio.com/)
+3. Choose one of the following solutions:
+   
+   * Install Jupyter Notebook
+  
+      ```sh
+      pip install notebook
+      ```
+      
+   * Install Visual Studio Code, click on this [link](https://code.visualstudio.com/)
    
 ### Installation 
 
@@ -246,6 +250,10 @@ Project Link: [https://github.com/jorgegmayorgas/](https://github.com/jorgegmayo
 [PowerPoint]: https://img.shields.io/badge/Microsoft_PowerPoint-B7472A?style=for-the-badge&logo=microsoft-powerpoint&logoColor=white
 <!-- [PowerPoint]: https://img.shields.io/badge/Microsoft-Powerpoint-red.svg?logo=data:image/svg%2bxml;base64,PHN2ZyBmaWxsPSIjQjc0NzJBIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+TWljcm9zb2Z0IFBvd2VyUG9pbnQ8L3RpdGxlPjxwYXRoIGQ9Ik0xMy41IDEuNXExLjQ1MyAwIDIuNzk1LjM3NSAxLjM0Mi4zNzUgMi41MDggMS4wNiAxLjE2Ni42ODYgMi4xMiAxLjY0MS45NTYuOTU1IDEuNjQxIDIuMTIxLjY4NiAxLjE2NiAxLjA2MSAyLjUwOFEyNCAxMC41NDcgMjQgMTJxMCAxLjQ1My0uMzc1IDIuNzk1LS4zNzUgMS4zNDItMS4wNiAyLjUwOC0uNjg2IDEuMTY2LTEuNjQxIDIuMTItLjk1NS45NTYtMi4xMjEgMS42NDEtMS4xNjYuNjg2LTIuNTA4IDEuMDYxLTEuMzQyLjM3NS0yLjc5NS4zNzUtMS4yOSAwLTIuNTItLjMwNS0xLjIzLS4zMDQtMi4zMzctLjg4NC0xLjEwOC0uNTgtMi4wNjMtMS40MTgtLjk1NS0uODM4LTEuNjkzLTEuODkzSC45OTdxLS40MTEgMC0uNzA0LS4yOTNUMCAxNy4wMDRWNi45OTZxMC0uNDEuMjkzLS43MDNULjk5NiA2aDMuODlxLjczOS0xLjA1NSAxLjY5NC0xLjg5My45NTUtLjgzNyAyLjA2My0xLjQxOCAxLjEwNy0uNTggMi4zMzctLjg4NFExMi4yMSAxLjUgMTMuNSAxLjV6bS43NSAxLjUzNXY4LjIxNWg4LjIxNXEtLjE0LTEuNjQtLjgyNi0zLjA3Ni0uNjg2LTEuNDM2LTEuNzgyLTIuNTMxLTEuMDk1LTEuMDk2LTIuNTM3LTEuNzgyLTEuNDQxLS42ODUtMy4wNy0uODI2em0tNS4yNjIgNy41N3EwLS42OC0uMjI4LTEuMTY2LS4yMjktLjQ4Ni0uNjI3LS43OS0uMzk5LS4zMDUtLjkzOC0uNDQ2LS41MzktLjE0LTEuMTcyLS4xNEgyLjg0OHY3Ljg2M2gxLjg0di0yLjc0Mkg1LjkzcS41NzQgMCAxLjExOS0uMTd0Ljk3OC0uNDkzcS40MzQtLjMyMi42OTgtLjgwMi4yNjMtLjQ4LjI2My0xLjExNHpNMTMuNSAyMXExLjE3MiAwIDIuMjYyLS4yODd0Mi4wNTYtLjgycS45NjctLjUzNCAxLjc3Ni0xLjI3OC44MDgtLjc0NCAxLjQxOC0xLjY2NC42MS0uOTIuOTg0LTEuOTg2LjM3NS0xLjA2Ny40NjktMi4yMjdoLTkuNzAzVjMuMDM1cS0xLjczNS4xNC0zLjI3LjkwOFQ2Ljc5NyA2aDQuMjA3cS40MSAwIC43MDMuMjkzdC4yOTMuNzAzdjEwLjAwOHEwIC40MS0uMjkzLjcwM3QtLjcwMy4yOTNINi43OTdxLjY0NC43MTUgMS40MTIgMS4yNzEuNzY4LjU1NyAxLjYyMy45NDQuODU1LjM4NyAxLjc4MS41ODZRMTIuNTQgMjEgMTMuNSAyMXpNNS44MTIgOS41OThxLjU3NSAwIC45MTUuMjI4LjM0LjIyOS4zNC44MzggMCAuMjctLjEyNC40NC0uMTIzLjE3LS4zMS4yNzUtLjE4OC4xMDUtLjQyMi4xNDYtLjIzNC4wNDEtLjQ0NS4wNDFINC42ODdWOS41OThaIi8+PC9zdmc+  -->
 [PowerPoint-url]: https://www.microsoft.com/microsoft-365/powerpoint
+[DALL-E]: https://img.shields.io/badge/DALL%2DE-green
+[DALL-E-url]: https://chat.openai.com/g/g-2fkFE8rbu-dall-e
+[DALL-E Enabled]:https://img.shields.io/badge/DALL--E-Enabled-green
+[DALL-E Enabled-url]:https://chat.openai.com/g/g-2fkFE8rbu-dall-e
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
 [Angular-url]: https://angular.io/
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
