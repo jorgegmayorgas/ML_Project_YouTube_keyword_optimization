@@ -1,8 +1,9 @@
 import ast
 from datetime import datetime
+import matplotlib.pyplot as plt 
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt 
+import pickle
 import seaborn as sns
 from scipy.stats import ttest_ind,mannwhitneyu,ttest_rel,ttest_1samp,pearsonr
 from scipy.stats import chi2_contingency,f_oneway
@@ -11,6 +12,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score, classification_report, confusion_matrix,ConfusionMatrixDisplay,r2_score, mean_absolute_error, mean_squared_error
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler,MinMaxScaler,OneHotEncoder,OrdinalEncoder
+
 
 def internal_anova_columns (df:pd.DataFrame,target_col:str,lista_num_columnas:list=[],pvalue:float=0.05):
     """
@@ -825,12 +827,28 @@ def arima_metrics(y_test,model_name:str,column:str,value_of_column:str,preds):
     results_dict={}
     results_list=[]
     results_dict['model']={model_name}
-    results_dict['r_square_score']=round(r2_score(y_test, preds), 4)
-    results_dict['mae_score']=round(mean_absolute_error(y_test, preds), 4)
-    results_dict['mse_score']=round(mean_squared_error(y_test, preds), 4)
-    results_dict['rmse_score']=round(np.sqrt(mean_squared_error(y_test, preds)), 4)
-    results_dict['mape_score']=round(mean_absolute_percentage_error(y_test, preds), 4)
-    
+    y_test[np.isinf(y_test)] = 0
+    preds[np.isinf(preds)] = 0
+    try:
+        results_dict['r_square_score']=round(r2_score(y_test, preds), 4)
+    except (ZeroDivisionError,ValueError,OverflowError):
+        results_dict['r_square_score']=0
+    try:
+        results_dict['mae_score']=round(mean_absolute_error(y_test, preds), 4)
+    except (ZeroDivisionError,ValueError,OverflowError):
+        results_dict['mae_score']=0
+    try:
+        results_dict['mse_score']=round(mean_squared_error(y_test, preds), 4)
+    except (ZeroDivisionError,ValueError,OverflowError):
+        results_dict['mse_score']=0
+    try:        
+        results_dict['rmse_score']=round(np.sqrt(mean_squared_error(y_test, preds)), 4)
+    except (ZeroDivisionError,ValueError,OverflowError):
+        results_dict['rmse_score']=0
+    try:
+        results_dict['mape_score']=round(mean_absolute_percentage_error(y_test, preds), 4)
+    except (ZeroDivisionError,ValueError,OverflowError):
+        results_dict['mape_score']=0
     if column !='' and value_of_column !='':
         results_dict[column]=value_of_column
     
@@ -896,3 +914,163 @@ def plot_test_vs_preds(y_test,preds,key:str="",log_or_sqrt:str=""):
         # Plot a line for perfect predictions
         plt.plot(y_test, y_test, color='red')
         plt.show()
+def function_models_log_sqrt(df:pd.DataFrame,target,drop_columns:list,bool_log:True,bool_sqrt:False):
+
+    if (bool_log and bool_sqrt) or (bool_log==False and bool_sqrt==False):
+        raise ValueError("bool_log and bool_sqrt cannot be True/False at the same time")
+        return None
+    drop_columns=drop_columns+target
+
+    
+    df_features = df.drop(drop_columns,axis=1)
+    X_train, X_test, y_train, y_test = train_test_split(df_features,#X
+                                                        df[target].squeeze(),#Y
+                                                        test_size=0.2,
+                                                        random_state=42)
+
+    X_train_scaled,X_test_scaled=dafu.scaler_of_x_train_and_x_test(X_train,X_test)
+
+    rfr_model = RandomForestRegressor(random_state=42)
+    lr_model = LinearRegression()
+    dtr_model = DecisionTreeRegressor(random_state=42)
+    gbr_model = GradientBoostingRegressor(random_state=42)
+    knr_model=KNeighborsRegressor()
+    xgb_model=XGBRegressor(random_state=42)
+    lgb_model=LGBMRegressor(random_state=42,verbose=-100)
+    cbr_model=CatBoostRegressor(random_state=42,verbose=False)
+    #svr_model = SVR()
+    elastic_model = ElasticNet()
+    ridge_model = Ridge()
+    lasso_model = Lasso()
+    mlp_model = MLPRegressor()
+    tfk_model = tf.keras.Sequential([
+        tf.keras.layers.Dense(512, activation='relu', input_shape=(X_train.shape[1],)),
+        tf.keras.layers.BatchNormalization(),
+        tf.keras.layers.Dropout(0.12),
+        tf.keras.layers.Dense(256, activation='relu', kernel_regularizer=regularizers.l2(0.04)),
+        tf.keras.layers.BatchNormalization(),
+        tf.keras.layers.Dropout(0.6),
+        tf.keras.layers.Dense(128, activation='relu', kernel_regularizer=regularizers.l2(0.02)),
+        tf.keras.layers.Dropout(0.3),
+        tf.keras.layers.Dense(64, activation='relu', kernel_regularizer=regularizers.l2(0.01)),
+        tf.keras.layers.Dense(1)  # Output layer for regression
+    ])
+
+    # Compile the model
+
+    tfk_model.compile(optimizer='adam', loss='mean_squared_error')
+
+
+    # Train the model
+    models={}
+    models={'RandomForestRegressor':rfr_model,
+                'LinearRegression':lr_model,
+                'DecisionTreeRegressor':dtr_model,
+                'GradientBoostingRegressor':gbr_model,
+                'KNeighborsRegressor':knr_model,
+                'XGBRegressor':xgb_model,
+                'LGBMRegressor':lgb_model,
+                'CatBoostRegressor':cbr_model,
+                'Ridge':ridge_model,
+                'Lasso':lasso_model,
+                'MLP':mlp_model,
+                'ElasticNet' : elastic_model,
+                'Keras':tfk_model
+                }
+
+    list_df_metrics=[]
+    for key,model in models.items():
+        model.fit(X_train_scaled, y_train)
+        preds = model.predict(X_test_scaled)
+        #if bool_log:
+        #    original_scale_predictions = np.exp(preds)
+        #    original_y_test=np.exp(y_test)
+        #if bool_sqrt:
+        #    original_scale_predictions = np.square(preds)
+        #    original_y_test=np.square(y_test)
+    # Metrics
+        metrics_dict={}
+        value_r2_score=r2_score(y_test, preds)
+        value_mae_score=mean_absolute_error(y_test, preds)
+        value_mse_score=mean_squared_error(y_test, preds)
+        value_rmse_score=np.sqrt(mean_squared_error(y_test, preds))
+        value_mape_score=tb.mean_absolute_percentage_error(y_test, preds)
+        metrics_dict['r_square_score']=value_r2_score
+        metrics_dict['mae_score']=value_mae_score
+        metrics_dict['mse_score']=value_mse_score
+        metrics_dict['rmse_score']=value_rmse_score
+        metrics_dict['mape_score']=value_mape_score
+        print(f"{key} R^2 score:", round(value_r2_score, 4))
+        print(f"{key} MAE score:", round(value_mae_score, 4))
+        print(f"{key} MSE score:", round(value_mse_score, 4))
+        print(f"{key} RMSE score:", round(value_rmse_score, 4))
+        print(f"{key} MAPE score:", round(value_mape_score, 4))
+        if bool_log:
+            list_df_metrics.append(tb.model_metrics(metrics_dict,key,"transformation","log"))
+            log_or_sqrt="log"
+            
+        if bool_sqrt:
+            list_df_metrics.append(tb.model_metrics(metrics_dict,key,"transformation","sqrt"))
+            
+            log_or_sqrt="sqrt"
+        filename = f'./metrics/{tb.datetime_naming_convention()}_{key}_{log_or_sqrt}'
+        ###
+
+        # Create a scatter plot
+        tb.plot_test_vs_preds(y_test,preds,key,log_or_sqrt)
+
+        ###
+            #list_df_metrics.append(tb.arima_metrics(original_y_test,key,"transformation","square",original_scale_predictions))
+        #if key in ['LinearRegression','Ridge', 'Lasso', 'ElasticNet','KNeighborsRegressor']:
+        #    importances=model.coef_
+        #else:
+        #    importances =model.feature_importances_
+        #feature_importances = pd.DataFrame(importances, index=df_features.columns.to_list(), columns=["importance"]).sort_values("importance", ascending=False)        #print(f"{key}",importances)
+
+        if key != 'Keras':  # Keras models uses another format
+            filename = f'{filename}.pkl'
+            with open(filename, 'wb') as file:
+                pickle.dump(model, file)
+        else:
+            filename = f'{filename}.h5'
+            model.save(filename)  # Saves the Keras model
+        print(f"filename:{filename}")
+    df_metrics=pd.concat(list_df_metrics, ignore_index=True)
+    df_metrics.to_csv(f'./metrics/{tb.datetime_naming_convention()}_metrics_{log_or_sqrt}.csv')
+    dict_data_function={}
+    
+    try:
+        dict_data_function={
+        'models':models,
+        'X_train':X_train, 
+        'X_test':X_test, 
+        'y_train':y_train, 
+        'y_test':y_test,
+        'X_train_scaled':X_train_scaled,
+        'X_test_scaled':X_test_scaled,
+    }
+    except ImportError:
+        dict_data_function={
+        'models':0,
+        'X_train':0, 
+        'X_test':0, 
+        'y_train':0, 
+        'y_test':0,
+        'X_train_scaled':0,
+        'X_test_scaled':0
+        }
+    print("Success")
+    return dict_data_function
+    def calculate_correlation_groups(df:pd.DataFrame, target, feature_columns, group_size=10):
+    #feature_columns = [col for col in df.columns if col != 'target']
+    correlation_results = {}
+
+    # Split the feature columns into groups of 10
+    for i in range(0, len(feature_columns), group_size):
+        group = feature_columns[i:i+group_size]
+        group.append(target)  # Add the target variable to each group
+        subgroup = df[group]
+        correlation_matrix = subgroup.corr().sort_values(ascending=False)
+        correlation_results[f'Group {i//group_size + 1}'] = correlation_matrix
+
+    return correlation_results
