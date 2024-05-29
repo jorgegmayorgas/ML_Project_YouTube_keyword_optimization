@@ -1061,7 +1061,8 @@ def function_models_log_sqrt(df:pd.DataFrame,target,drop_columns:list,bool_log:T
         }
     print("Success")
     return dict_data_function
-    def calculate_correlation_groups(df:pd.DataFrame, target, feature_columns, group_size=10):
+
+def calculate_correlation_groups(df:pd.DataFrame, target, feature_columns, group_size=10):
     #feature_columns = [col for col in df.columns if col != 'target']
     correlation_results = {}
 
